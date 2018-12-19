@@ -60,14 +60,43 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation-name: moveinleft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+@keyframes moveinleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: moveinright 1s ease-out;
 }
-
+@keyframes moveinright {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -104,4 +133,21 @@ body {
 }
 .btn-white::after {
   background-color: #fff;
+}
+.btn-animated {
+  animation: movefrombottom .5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+@keyframes movefrombottom {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  80% {
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
